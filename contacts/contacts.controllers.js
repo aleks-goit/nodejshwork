@@ -44,10 +44,10 @@ class ContactsController {
       const deletedContact = await contactModel.findByIdAndDelete({ _id: id });
 
       if (!deletedContact) {
-        return res.status(404).send({ message: "contact not found" });
+        return res.status(404).send({ message: "contact not found"});
       }
 
-      return res.status(204).send({ message: "successful deleted" });
+      return res.status(204).send({ message: "successful deleted"});
     } catch (err) {
       next(err);
     }
@@ -70,7 +70,7 @@ class ContactsController {
       if (!updatedContact) {
         return res
           .status(404)
-          .send({ message: "contact not found" });
+          .send({ message: "contact not found"});
       }
 
       return res.status(204).send({ message: "contact successfully updated" });

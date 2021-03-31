@@ -1,4 +1,5 @@
 const Joi = require("joi");
+
 const {
   Types: { ObjectId },
 } = require("mongoose");
@@ -51,7 +52,7 @@ function validateObjectId(req, res, next) {
   const { id } = req.params;
 
   if (!ObjectId.isValid(id)) {
-    return res.status(400).send({ message: "incorrect contact ID" });
+    return res.status(400).send({ message: "incorrect contact ID"});
   }
 
   next();
